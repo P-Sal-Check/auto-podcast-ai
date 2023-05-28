@@ -9,7 +9,7 @@ from google.cloud import texttospeech
 load_dotenv()
 app = FastAPI()
 # Instantiates a client
-# tts_client = texttospeech.TextToSpeechClient()
+tts_client = texttospeech.TextToSpeechClient()
 
 
 
