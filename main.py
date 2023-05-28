@@ -4,14 +4,10 @@ import os
 import openai
 import requests
 from newspaper import Article
-from google.cloud import texttospeech
+
 
 load_dotenv()
 app = FastAPI()
-# Instantiates a client
-tts_client = texttospeech.TextToSpeechClient()
-
-
 
 
 
