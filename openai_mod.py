@@ -11,11 +11,11 @@ class OPENAI:
 
     def chatCompletion(self, title:str, contents:str):
         print(f"chat completion 요청, 제목 {title}")
-        prompt = f"Here's a news article, and I want to use it as the content of a five-minute podcast, so I'd like you to write a script for the podcast. The podcast should be delivered in natural Korean, like an announcer speaking. The title is {title} and the content is {contents}."
+        prompt = f"The title is {title} and the content is {contents}."
         chat_completion = openai.ChatCompletion.create(
             model="gpt-3.5-turbo", 
             messages= [
-                {"role": "system","content": "You are a Korean announcer. Please write a script for a five-minute podcast."},
+                {"role": "system","content": "Given the title and body of a news story from South Korea, write a 10-minute news podcast script based on this story. The script should only include important information from the story and should be delivered in natural Korean language, written as a Korean announcer would speak. Do not include names of news organizations or reporters, such as 'Yonhap News TV' or 'Reporter Kim Jun-hee'. The script should not include phrases such as 'This is reporter Kim Jun-hee.' The script should contain only informative content. Please provide the title and content of the news story."},
                 {"role": "user","content": prompt,}]
         )
 

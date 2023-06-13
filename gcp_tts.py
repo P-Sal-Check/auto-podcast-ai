@@ -15,7 +15,7 @@ class GCPTTS:
     
     def get_tts(self, title, text):
         today = datetime.datetime.now().strftime("%Y%m%d")
-        print(f"TTS 요청 시작 \n날짜: {today} / 제목: {title}")
+        
         synthesis_input = texttospeech.SynthesisInput(text=text)
         response = self.client.synthesize_speech(
             input=synthesis_input, 
@@ -23,16 +23,15 @@ class GCPTTS:
             audio_config=self.audio_config
             )
         # filename 은 title + 오늘 날짜 + .mp3
-        filename = title + '_' + today + '_' + ".mp3"
-        print(f"파일 제목: {filename} / 파일 저장 시작")
+        filename = 'audios/' + title + '_' + today + '_' + ".mp3"
+        
         with open(filename, "wb") as out:
             out.write(response.audio_content)
-            print(f'파일 저장 완료 "{filename}"')
+            
         
         return filename
 
 
-if __name__ == "__main__":
-    gcp_tts = GCPTTS()
+
     
         
