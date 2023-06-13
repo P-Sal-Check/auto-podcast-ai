@@ -2,3 +2,7 @@ __pycache__
 .env
 
 .venv
+client_secrets.json
+*.mp4
+google_youtube_list.json
+>>>>>>> 8e2ec8e (youtube uploader)

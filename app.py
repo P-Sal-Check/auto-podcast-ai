@@ -46,11 +46,3 @@ class APP:
 
 
 
-    
-    
-
-
-if __name__ == "__main__":
-    print("app 실행")
-    instance = APP()
-    instance.makeSampleTts()
